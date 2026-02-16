@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+title: "Samuel y Audrey YouTube Transcripts (ES+EN)"
+type: dataset
+authors:
+  - family-names: "Jeffery"
+    given-names: "Samuel"
+  - family-names: "Bergner"
+    given-names: "Audrey"
+contact:
+  - name: "Samuel & Audrey Media Network"
+    email: "nomadicsamuel@gmail.com"
+repository-code: "https://huggingface.co/datasets/samuelandaudreymedianetwork/samuel-y-audrey-youtube-transcripts-es-en"
+date-released: "2026-02-13"
+license: "CC-BY-NC-4.0"

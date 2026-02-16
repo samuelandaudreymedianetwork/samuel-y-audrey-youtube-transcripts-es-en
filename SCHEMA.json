@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Samuel y Audrey YouTube Transcripts (ES+EN) — Record (Master Polished)",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "content_hash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "video_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "position": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "published_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "video_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "title": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "youtube_title": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lang_primary": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lang_secondary": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lang": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "channel": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "domain": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "caption_source": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "caption_track_kind": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "view_count": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "tags": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tags_list": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "text_with_breaks": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "script_es": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "script_es_with_breaks": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "script_en": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "script_en_with_breaks": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "srt_es": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "srt_en": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "original_filename_es": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "original_filename_en": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "missing_scripts": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "video_id",
+    "lang_primary",
+    "lang_secondary",
+    "missing_scripts"
+  ]
+}
