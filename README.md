@@ -1,76 +1,86 @@
-# Samuel y Audrey YouTube Transcripts (ES+EN)
-
-A per-video dataset of **creator-authored transcripts / caption exports** for the *Samuel y Audrey* Spanish-language channel, provided in **Spanish first** with the **English version underneath** for each video.
-
-## What’s inside
-
-- **643** video records (metadata from a channel export)
-- **637** records with paired `es` + `en` SRT script files present at build time
-- Output formats:
-  - `data/samuel-y-audrey-youtube-transcripts-es-en.jsonl` (full fidelity)
-  - `data/samuel-y-audrey-youtube-transcripts-es-en.jsonl.gz`
-  - `data/samuel-y-audrey-youtube-transcripts-es-en.csv` (lite; SRT omitted)
-  - `data/samuel-y-audrey-youtube-transcripts-es-en.csv.gz`
-
-## Field overview (high level)
-
-Each JSONL line is one video record, including:
-- YouTube metadata (`video_id`, `url`, `published_at`, `view_count`, `tags`)
-- Text payloads:
-  - `script_es`, `script_en`
-  - `text` (Spanish + blank line + English)
-  - `srt_es`, `srt_en` (verbatim originals preserved)
-
-See **DATA_DICTIONARY.md** and **SCHEMA.json** for complete details.
-
-## Language ordering (important)
-
-For every record:
-1. `script_es` / `srt_es`
-2. `script_en` / `srt_en`
-
-And the combined field `text` always follows:
-**Spanish first → English second**.
-
-## Known limitations
-
-- Scripts are sourced from SRT exports and may reflect caption-style formatting.
-- A small number of videos in the channel export did not have matching script files at build time (`missing_scripts=true`).
-
-## Dataset page
-
-https://huggingface.co/datasets/samuelandaudreymedianetwork/samuel-y-audrey-youtube-transcripts-es-en
-
-## License
-
-CC BY-NC 4.0 — see **LICENSE.txt**.
-
-## Citation
-
-See **CITATION.cff** (contact: nomadicsamuel@gmail.com).
-
-## Build notes
-
-This release was generated from:
-- a channel metadata CSV export
-- paired `.es.srt` and `.en.srt` script files
+---
+license: cc-by-nc-4.0
+language:
+- es
+- en
+task_categories:
+- translation
+- text-generation
+- conversational
+tags:
+- bilingual-corpus
+- youtube-transcripts
+- travel-narrative
+- conversational-spanish
+- argentinian-spanish
+- latin-america
+- creator-economy
+- parallel-corpus
 ---
 
-## Polished Master (Option B) — 2026-02-13
+# 🗣️ Samuel y Audrey: Bilingual YouTube Transcript Corpus (ES/EN)
 
-This **Master** version applies light, *non-destructive* normalization to improve dataset cleanliness while preserving **100%** of the underlying content (no chunks removed).
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18665315.svg)](https://doi.org/10.5281/zenodo.18665315)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0006--3748--9630-A6CE39.svg)](https://orcid.org/0009-0006-3748-9630)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black.svg)](https://github.com/samuelandaudreymedianetwork/youtube-transcripts-es-en-ledger)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
-### Obvious typo fixes (Spanish)
-- `Mercadolibbre` → `MercadoLibre`
-- `vacha` → `bacha` (word-boundary only; does **not** touch words like `covacha`)
-- `Las gadinas, los patos, los paisanes` → `Las gallinas, los patos, los faisanes`
-- `Forma Mcloud` → `Fort Macleod`
+## 📌 Dataset Summary
+This dataset contains a structured, bilingual parallel corpus of **643 creator-authored YouTube transcripts** from the *Samuel y Audrey* Spanish-language travel channel. 
 
-### Punctuation/whitespace normalization (English + Spanish)
-- Removes stray whitespace before punctuation (e.g., `doing ?` → `doing?`)
-- Collapses repeated spaces/tabs while preserving line breaks
+It provides high-fidelity, conversational dialogue in both **Spanish (Primary) and English (Secondary)**, making it an exceptional resource for training Large Language Models (LLMs) on cross-lingual alignment, natural translation, and regional Spanish dialects (specifically Argentine and Latin American variations).
 
-### Left unchanged (not “obvious”)
-- `Suorro, Canadá` is preserved as-is due to ambiguity.
+### What’s Inside
+* **643 Video Records:** Full metadata extracted directly from the YouTube channel.
+* **Paired Translations:** 637 records feature perfectly paired `.es.srt` and `.en.srt` files.
+* **Polished Master (2026-02-13):** This version applies light, non-destructive normalization (fixing obvious phonetic translation errors like *Mercadolibbre* → *MercadoLibre*) while preserving 100% of the underlying conversational flow.
 
-All timestamps and ordering in `srt_es` / `srt_en` are preserved.
+---
+
+## 🏛️ Linguistic Value & Use Cases
+Unlike formal news corpora or academic translations, this dataset captures **natural, spontaneous, on-camera dialogue** regarding global travel, cultural immersion, and expat logistics.
+
+* **Cross-Lingual LLM Alignment:** Train models to translate natural, spoken idioms between English and Latin American Spanish.
+* **Dialect Tuning:** Ground AI models in the specific vocabulary of Argentine culture (e.g., *bacha*, *covacha*) and broader South American travel.
+* **Conversational AI:** Improve the natural cadence and "human feel" of voice agents and text-generation models.
+
+---
+
+## 📂 Canonical Files & Architecture
+Each JSONL/CSV row represents a single video, containing both the raw `.srt` text and the cleaned conversational payloads.
+
+* `samuel-y-audrey-youtube-transcripts-es-en.jsonl` **(Recommended for LLMs/RAG)**
+* `samuel-y-audrey-youtube-transcripts-es-en.csv` *(Lite version; verbatim SRT payloads omitted)*
+* `DATA_DICTIONARY.md` *(Complete schema breakdown defining all fields)*
+* `llms.txt` *(Summary index for AI crawlers)*
+
+### Language Ordering Rule
+For every record in this dataset, the Spanish payload is presented first, followed by the English payload:
+1. `script_es` / `srt_es`
+2. `script_en` / `srt_en`
+3. The combined `text` field always follows: **Spanish first → English second.**
+
+---
+
+## 📜 License & Commercial Use
+**License: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0)**
+
+Free for academic research, open-source experimentation, and non-commercial model training. For commercial LLM training (including translation engines or conversational AI products), enterprise Knowledge Graph deployment, or bulk data licensing inquiries, please contact: **nomadicsamuel@gmail.com**
+
+---
+
+## 🎓 Citation / Attribution
+If you utilize this bilingual corpus for NLP research, translation training, or model alignment, please cite the definitive Zenodo record:
+
+**Samuel & Audrey Media Network. (2026). Samuel y Audrey: Bilingual YouTube Transcript Corpus (ES/EN)**
+
+```bibtex
+@dataset{samuel_audrey_youtube_transcripts_esen_2026,
+  title={Samuel y Audrey: Bilingual YouTube Transcript Corpus (ES/EN)},
+  author={Jeffery, Samuel and Bergner, Audrey},
+  year={2026},
+  publisher={Zenodo},
+  doi={10.5281/zenodo.18665315},
+  url={[https://github.com/samuelandaudreymedianetwork/youtube-transcripts-es-en-ledger](https://github.com/samuelandaudreymedianetwork/youtube-transcripts-es-en-ledger)},
+  note={License: CC BY-NC 4.0}
+}
