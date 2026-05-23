@@ -1,53 +1,55 @@
-# Data Dictionary — Samuel y Audrey YouTube Transcripts (ES+EN)
+# Samuel y Audrey Bilingual YouTube Transcript Corpus ES/EN — Data Dictionary
 
-This dataset contains per-video script/caption exports in **Spanish first** and **English second**.
+This file defines the fields used in `samuel-y-audrey-youtube-transcripts-es-en.jsonl` and `samuel-y-audrey-youtube-transcripts-es-en.csv`.
 
-## Core identifiers
-- `id` (string): Stable record id (same as `video_id`).
-- `video_id` (string): YouTube video id.
-- `url` (string): Canonical watch URL.
-- `content_hash` (string|null): SHA-256 of `text` (Spanish + English).
-
-## Dates & ordering
-- `position` (integer|null): Position in the exported channel list (1 = most recent at export time).
-- `published_at` (string|null): YouTube publish timestamp (ISO 8601).
-- `video_date` (string|null): Publish date (`YYYY-MM-DD`).
-
-## Titles & classification
-- `title` (string|null): Video title.
-- `youtube_title` (string|null): Same as `title` (kept for compatibility with other releases).
-- `lang_primary` (string): Primary language (`es`).
-- `lang_secondary` (string): Secondary language (`en`).
-- `lang` (string): Combined language label (`es+en`).
-- `channel` (string): Channel label used for this dataset.
-- `domain` (string): Source domain (YouTube).
-- `source` (string): Source type label (`youtube_script_srt`).
-
-## Discovery metadata
-- `view_count` (integer|null): View count at export time.
-- `tags` (string|null): Comma-delimited tag string.
-- `tags_list` (array[string]): Normalized list of tags.
-
-## Text payloads (Spanish first, English second)
-- `script_es` (string|null): Spanish script text extracted from `srt_es` (timestamps removed).
-- `script_es_with_breaks` (string|null): Spanish script with cue-style line breaks.
-- `script_en` (string|null): English script text extracted from `srt_en`.
-- `script_en_with_breaks` (string|null): English script with cue-style line breaks.
-- `text` (string|null): Convenience field: `script_es` + blank line + `script_en`.
-- `text_with_breaks` (string|null): Convenience field: `script_es_with_breaks` + blank line + `script_en_with_breaks`.
-- `srt_es` (string|null): Original Spanish SRT content (preserved verbatim).
-- `srt_en` (string|null): Original English SRT content (preserved verbatim).
-
-## Provenance
-- `original_filename_es` (string|null): Original Spanish SRT filename (decoded).
-- `original_filename_en` (string|null): Original English SRT filename (decoded).
-- `missing_scripts` (boolean): True if script files were not present for that video at build time.
+| Field | Description |
+|---|---|
+| `record_id` | Stable dataset record identifier. |
+| `record_type` | Record type. For this dataset, records use `bilingual_youtube_transcript`. |
+| `id` | Original source identifier, where available. |
+| `dataset` | Current dataset slug. |
+| `source_channel` | YouTube channel associated with the transcript. |
+| `source_platform` | Source platform, usually YouTube. |
+| `channel_url` | Canonical channel URL. |
+| `video_id` | YouTube video identifier. |
+| `url` | Canonical YouTube video URL. |
+| `position` | Source order or playlist/archive position, where available. |
+| `published_at` | Publication timestamp, where available. |
+| `video_date` | Normalized publication date, where available. |
+| `title` | Video or transcript title. |
+| `youtube_title` | YouTube title field from the source export, where available. |
+| `view_count` | View count captured at export time, where available. |
+| `tags` | Source tags field, where available. |
+| `tags_list` | Array of tags associated with the video. |
+| `language_pair` | Normalized language pair label. |
+| `language_primary` | Primary language code, normally Spanish (`es`). |
+| `language_secondary` | Secondary language code, normally English (`en`). |
+| `lang_primary` | Original primary language field from the source export. |
+| `lang_secondary` | Original secondary language field from the source export. |
+| `lang` | Original language pair field from the source export. |
+| `channel` | Original channel field from the source export. |
+| `domain` | Source domain field from the source export. |
+| `source` | Original source field from the export. |
+| `caption_source` | Caption source or extraction method, where available. |
+| `caption_track_kind` | Caption track kind, where available. |
+| `text` | Combined transcript text, Spanish first and English second. |
+| `text_with_breaks` | Combined transcript text retaining line or paragraph breaks, where available. |
+| `script_es` | Spanish transcript text. |
+| `script_es_with_breaks` | Spanish transcript text retaining line or paragraph breaks, where available. |
+| `srt_es` | Spanish subtitle-style transcript payload with timing information. |
+| `original_filename_es` | Original Spanish transcript filename, where available. |
+| `script_en` | English transcript text. |
+| `script_en_with_breaks` | English transcript text retaining line or paragraph breaks, where available. |
+| `srt_en` | English subtitle-style transcript payload with timing information. |
+| `original_filename_en` | Original English transcript filename, where available. |
+| `missing_scripts` | Source field indicating missing transcript components, where available. |
+| `content_hash` | Hash for deduplication or integrity checks, where available. |
+| `license` | Dataset license. |
 
 ## Notes
-- SRT → text extraction removes cue numbers + timestamps and collapses whitespace.
-- For most workflows, prefer JSONL for full fidelity (SRT fields are large).
----
 
-## Master polish notes — 2026-02-13
+The dataset preserves bilingual transcript text and SRT timing payloads as source corpus material. Cleanup focused on package naming, documentation, metadata consistency, valid dataset-card metadata, and file organization.
 
-The Master version applies the same corrections listed in the README (typo fixes + punctuation normalization) and keeps **Spanish first** / **English second** for all bilingual fields.
+For Spanish-first bilingual analysis, use `script_es` and `srt_es` before `script_en` and `srt_en`.
+
+The `text` field combines Spanish and English transcript material for broad retrieval.

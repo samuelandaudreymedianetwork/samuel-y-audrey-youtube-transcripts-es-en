@@ -1,0 +1,93 @@
+{
+  "dataset": "samuel-y-audrey-youtube-transcripts-es-en",
+  "title": "Samuel y Audrey Bilingual YouTube Transcript Corpus ES/EN",
+  "generated_utc": "2026-05-21T22:03:12.962998+00:00",
+  "records_total": 643,
+  "record_counts_by_type": {
+    "bilingual_youtube_transcript": 643
+  },
+  "canonical_dataset_url": "https://huggingface.co/datasets/samuelandaudreymedianetwork/samuel-y-audrey-youtube-transcripts-es-en",
+  "channel_url": "https://youtube.com/@samuelyaudrey",
+  "doi": "10.5281/zenodo.18665315",
+  "license": "CC-BY-NC-4.0",
+  "language_order": "Spanish first, English second",
+  "snapshot": {
+    "records_with_titles": 643,
+    "records_with_urls": 643,
+    "records_with_spanish_transcript_text": 637,
+    "records_with_english_transcript_text": 637,
+    "records_with_spanish_srt_payloads": 637,
+    "records_with_english_srt_payloads": 637,
+    "records_with_view_counts": 643,
+    "records_with_missing_scripts_field_populated": 6,
+    "language_counts": {
+      "es+en": 643
+    },
+    "approx_spanish_transcript_words": 1899851,
+    "approx_english_transcript_words": 1982686,
+    "approx_combined_text_words": 3882537
+  },
+  "cleanup_note": "Removed duplicate raw exports from the cleaned package; replaced llms.txt with a short guide plus a separate full export; removed invalid Hugging Face task-category metadata.",
+  "files": {
+    ".gitattributes": {
+      "bytes": 127,
+      "sha256": "f884ab5acc3c44d244496ca3be708ee0bb81d627d6b78ba33331abd90b1d7f68"
+    },
+    "CITATION.cff": {
+      "bytes": 964,
+      "sha256": "3f587c7df727c52a6b010a478cfc3481050c080ef8ed7573dcf8796027801be8"
+    },
+    "DATA_DICTIONARY.md": {
+      "bytes": 3447,
+      "sha256": "10ccc786fcc66c1373d365e19921efebb7682c687b3158062aa72ed6dd1b2ae1"
+    },
+    "LICENSE.txt": {
+      "bytes": 565,
+      "sha256": "2cbdc48c2204869175a999956b8be6d3fbf1b0f00397da43c85ee072e7a8f841"
+    },
+    "MANIFEST.json": {
+      "bytes": 3594,
+      "sha256": "fdeaf24d2d94f1c1668f6d3865d43c62cac11323020da8b976b76e9a4ff44cf8"
+    },
+    "README.md": {
+      "bytes": 5778,
+      "sha256": "2849bc8b0f3100b38a53ad9825d735d1089a06f4124f32f13cac5e097d2b24ff"
+    },
+    "SCHEMA.json": {
+      "bytes": 7655,
+      "sha256": "cb226542a1a894fe1c1598bebd6dd6cd1ff608cdeff32c1086ce042ff2ff51b0"
+    },
+    "llms-samuel-y-audrey-youtube-transcripts-es-en.txt": {
+      "bytes": 116559599,
+      "sha256": "ae4691d36621250453a4ebdc88f3b6b8b2f38521ddc85ad87dd3ce835fa9f5a3"
+    },
+    "llms-samuel-y-audrey-youtube-transcripts-es-en.txt.gz": {
+      "bytes": 32742017,
+      "sha256": "d1d0954560f3a20fe2d965cf484631fffc5294ca12cf34cf67959485463a5a97"
+    },
+    "llms.txt": {
+      "bytes": 728,
+      "sha256": "2165a6b6f1a5f4305049b9dfa2273554377d52b38d7225c08288ed3b38df1b97"
+    },
+    "llms.txt.gz": {
+      "bytes": 423,
+      "sha256": "3b34fccd08d4e2e93b9643c46d0964b8acad4c274358ba30599ba01f491fd485"
+    },
+    "samuel-y-audrey-youtube-transcripts-es-en.csv": {
+      "bytes": 113111333,
+      "sha256": "4c35ee552db91a7af249492b7ee980e5cf87b59b267c4aa8e1e048da2d0cd1bb"
+    },
+    "samuel-y-audrey-youtube-transcripts-es-en.csv.gz": {
+      "bytes": 29781195,
+      "sha256": "838a2b0945c9329767a063cc97e1af95520342efd92296df5a86e07663a9b17c"
+    },
+    "samuel-y-audrey-youtube-transcripts-es-en.jsonl": {
+      "bytes": 116559153,
+      "sha256": "9e990b011421b3a05a11dfd17745165dd555a23b545234c7d24c8960d0cdc3d1"
+    },
+    "samuel-y-audrey-youtube-transcripts-es-en.jsonl.gz": {
+      "bytes": 32741503,
+      "sha256": "81ba580a2c1d0e6ac7163b0046efc50a993b7030d5de6b07f0e27f5569b8f27e"
+    }
+  }
+}

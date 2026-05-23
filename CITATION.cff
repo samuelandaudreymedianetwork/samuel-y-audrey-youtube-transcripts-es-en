@@ -1,15 +1,26 @@
 cff-version: 1.2.0
 message: "If you use this dataset, please cite it as below."
-title: "Samuel y Audrey YouTube Transcripts (ES+EN)"
 type: dataset
+title: "Samuel y Audrey Bilingual YouTube Transcript Corpus ES/EN"
 authors:
   - family-names: "Jeffery"
     given-names: "Samuel"
+    affiliation: "Samuel & Audrey Media Network"
+    orcid: "https://orcid.org/0009-0006-3748-9630"
+    email: "nomadicsamuel@gmail.com"
   - family-names: "Bergner"
     given-names: "Audrey"
-contact:
-  - name: "Samuel & Audrey Media Network"
-    email: "nomadicsamuel@gmail.com"
+    affiliation: "Samuel & Audrey Media Network"
+    orcid: "https://orcid.org/0009-0007-2249-0441"
 repository-code: "https://huggingface.co/datasets/samuelandaudreymedianetwork/samuel-y-audrey-youtube-transcripts-es-en"
-date-released: "2026-02-13"
+url: "https://huggingface.co/datasets/samuelandaudreymedianetwork/samuel-y-audrey-youtube-transcripts-es-en"
+doi: "10.5281/zenodo.18665315"
 license: "CC-BY-NC-4.0"
+keywords:
+  - bilingual corpus
+  - YouTube transcripts
+  - Samuel y Audrey
+  - Spanish-English
+  - travel video transcripts
+  - parallel corpus
+  - creator archive
